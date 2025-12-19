@@ -8,3 +8,15 @@ These are the primary funccionalitties:
 3. Auto-correct pokemon name for easy search.
 
 ## System Architeture and Design
+
+
+### Requirements
+- C++17 compatible compiler
+- CMake ≥ 3.16
+
+### Build
+```bash
+mkdir build
+cd build
+cmake ..
+make

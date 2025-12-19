@@ -5,9 +5,14 @@ project(poke_db
     LANGUAGES CXX
 )
 
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(poke_db
     src/main.cpp
+    src/pokemon.cpp
+    src/auxfunctions.cpp
 )
+
+target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)
