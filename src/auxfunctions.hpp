@@ -1,5 +1,6 @@
 #ifndef AUX_H
 #define AUX_H
 #include "pokemon.hpp"
-Pokemon getinfo(void);
+Type stringtotype(std::string type); 
+std::string typetostring(Type type);
 #endif
