@@ -11,8 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(poke_db
     src/main.cpp
+    src/pokemontype.cpp
     src/pokemon.cpp
     src/auxfunctions.cpp
+    
 )
 
 target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)

@@ -1,24 +1,22 @@
 #ifndef POKEMON_H
 #define POKEMON_H
-#include <iostream>
 #include <vector>
-
-enum class Type {
-    Fire, Water, Normal, Grass, Eletric, Poison, Flying, Bug, 
-    Ground, Fairy, Fighting, Psychic, Rock, Ice, Ghost, Dragon
-};
+#include "pokemontype.hpp"
+#include <string>
+#include <vector>
 class Pokemon { 
     private:
         std::string name;
-        std::vector<Type> types;
+        std::vector<PokemonType> types;
         int pokedex_number;
     public:
-        Pokemon(std::string name, std::vector<Type> type, int pokedex_number);
+        Pokemon(std::string name, std::vector<PokemonType> type, int pokedex_number);
         Pokemon();
         ~Pokemon() = default;
         std::string getname() const;
-        std::vector<Type> gettype() const;
+        std::vector<PokemonType> gettype() const;
         int getnumber() const;
-        void print();
+        void print() const;
 };
+
 #endif
