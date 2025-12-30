@@ -20,7 +20,7 @@ PokemonType stringtotype(std::string type) {
         return PokemonType::Grass;
     }
     else if (type == "electric") {
-        return PokemonType::Eletric;
+        return PokemonType::Electric;
     }
     else if (type == "poison") {
         return PokemonType::Poison;
@@ -66,7 +66,7 @@ std::string typetostring(PokemonType type) {
         case PokemonType::Water: return "Water";
         case PokemonType::Normal: return "Normal";
         case PokemonType::Grass: return "Grass";
-        case PokemonType::Eletric: return "Electric";
+        case PokemonType::Electric: return "Electric";
         case PokemonType::Poison: return "Poison";
         case PokemonType::Flying: return "Flying";
         case PokemonType::Bug: return "Bug";

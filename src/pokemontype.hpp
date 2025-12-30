@@ -3,7 +3,7 @@
 #include <string>
 
 enum class PokemonType {
-    Fire, Water, Normal, Grass, Eletric, Poison, Flying, Bug, 
+    Fire, Water, Normal, Grass, Electric, Poison, Flying, Bug, 
     Ground, Fairy, Fighting, Psychic, Rock, Ice, Ghost, Dragon
 };
 

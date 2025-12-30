@@ -1,5 +1,4 @@
 #include "pokemon.hpp"
-#include "auxfunctions.hpp"
 #include "pokemontype.hpp"
 #include <iostream>
 #include <vector>
@@ -18,9 +17,6 @@ Pokemon::Pokemon(std::string name, std::vector<PokemonType> type, int pokedex_nu
         }
 
     }
-
-Pokemon::Pokemon()
-    : name("Bulbasaur"), types({PokemonType::Grass, PokemonType::Poison}), pokedex_number(0) {}
 
 std::string Pokemon::getname() const {
     return this->name;

@@ -11,7 +11,6 @@ class Pokemon {
         int pokedex_number;
     public:
         Pokemon(std::string name, std::vector<PokemonType> type, int pokedex_number);
-        Pokemon();
         ~Pokemon() = default;
         std::string getname() const;
         std::vector<PokemonType> gettype() const;

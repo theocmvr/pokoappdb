@@ -13,8 +13,7 @@ add_executable(poke_db
     src/main.cpp
     src/pokemontype.cpp
     src/pokemon.cpp
-    src/auxfunctions.cpp
-    
+    src/pokeDB.cpp
 )
 
 target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)
