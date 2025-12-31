@@ -1,9 +1,25 @@
 #include "pokeDB.hpp"
 #include "pokemon.hpp"
 #include "pokemontype.hpp"
+#include "csv.hpp"
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+
+PokeDB::PokeDB() {
+    csv::CSVFormat format;
+    format.delimiter(';')
+          .no_header();
+
+    csv::CSVReader reader("data/pokemon_1.csv", format);
+    for (auto& row : reader) {
+        int number = row[0].get<int>();
+        std::string name = row[1].get<std::string>();
+        std::string typeColumn = row[2].get<std::string>();
+        std::vector<PokemonType> types = parseTypes(typeColumn);
+        add(Pokemon(name, types, number));
+    }
+}
 
 void PokeDB::add(const Pokemon& newPokemon) {
     pokedb.push_back(newPokemon);

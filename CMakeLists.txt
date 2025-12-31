@@ -17,3 +17,16 @@ add_executable(poke_db
 )
 
 target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)
+
+target_include_directories(poke_db
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
+
+configure_file(
+    ${PROJECT_SOURCE_DIR}/data/pokemon_1.csv
+    ${PROJECT_BINARY_DIR}/data/pokemon_1.csv
+    COPYONLY
+)

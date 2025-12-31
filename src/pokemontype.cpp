@@ -1,4 +1,5 @@
 #include "pokemontype.hpp"
+#include <sstream>
 #include <algorithm>
 #include <cctype>
 #include <iostream>
@@ -55,6 +56,9 @@ PokemonType stringtotype(std::string type) {
     else if (type == "dragon") {
         return PokemonType::Dragon;
     }
+    else if (type == "steel") {
+        return PokemonType::Steel;
+    }
     else {
         throw std::invalid_argument("Type doesn't exist");
     }
@@ -78,6 +82,19 @@ std::string typetostring(PokemonType type) {
         case PokemonType::Ice: return "Ice";
         case PokemonType::Ghost: return "Ghost";
         case PokemonType::Dragon: return "Dragon";
+        case PokemonType::Steel: return "Steel";
         default: return "Normal";
     }
+}
+
+std::vector<PokemonType> parseTypes(const std::string& typeColumn) {
+    std::vector<PokemonType> types;
+    std::stringstream current(typeColumn);
+    std::string token;
+    while(std::getline(current, token, ',')) {
+        if (!token.empty()) {   
+            types.push_back(stringtotype(token));
+        }
+    }
+    return types;
 }
