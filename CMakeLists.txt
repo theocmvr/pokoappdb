@@ -5,9 +5,10 @@ project(poke_db
     LANGUAGES CXX
 )
 
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Threads REQUIRED)
 
 add_executable(poke_db
     src/main.cpp
@@ -17,6 +18,8 @@ add_executable(poke_db
 )
 
 target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)
+
+target_link_libraries(poke_db PRIVATE Threads::Threads)
 
 target_include_directories(poke_db
     PRIVATE
