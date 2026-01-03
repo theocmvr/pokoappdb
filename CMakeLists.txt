@@ -15,6 +15,7 @@ add_executable(poke_db
     src/pokemontype.cpp
     src/pokemon.cpp
     src/pokeDB.cpp
+    src/pokeapp.cpp
 )
 
 target_compile_options(poke_db PRIVATE -Wall -Wextra -Wpedantic)

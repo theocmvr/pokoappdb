@@ -6,12 +6,12 @@
 #include <iostream>
 #include <stdexcept>
 
-PokeDB::PokeDB() {
+PokeDB::PokeDB(char* filename) {
     csv::CSVFormat format;
     format.delimiter(';')
           .no_header();
 
-    csv::CSVReader reader("data/pokemon_1.csv", format);
+    csv::CSVReader reader(filename, format);
     for (auto& row : reader) {
         int number = row[0].get<int>();
         std::string name = row[1].get<std::string>();
@@ -32,14 +32,15 @@ void PokeDB::listall() const {
 }
 
 Pokemon PokeDB::searchByName(const std::string& target) const {
-    int i = 0;
-    std::cout << "Searching your pokemon..." << std::endl;
-    while(pokedb[i].getname() != target) {
-        i++;
-        if (i == (int)pokedb.size()) {
-            throw std::invalid_argument("Pokemon not found");
-        } 
+    for (size_t i = 0; i < pokedb.size(); i++) {
+        if (pokedb[i].getname() == target) {
+            std::cout << "Pokemon found! Here is his info:\n";
+            return pokedb[i];
+        }
     }
-    std::cout << "Pokemon found! Here is his info: ";
-    return pokedb[i];
+    throw std::invalid_argument("Pokemon not found");
+}
+
+int PokeDB::maxdb() {
+    return (int)pokedb.size();
 }
