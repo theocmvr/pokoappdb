@@ -8,7 +8,7 @@
 #include <limits>
 
 
-PokeApp::PokeApp(PokeDB db)
+PokeApp::PokeApp(PokeDB& db)
     : db(db) {}
 
 void PokeApp::run() {
@@ -80,7 +80,7 @@ void PokeApp::run() {
             std::cout << "Pokedex number: ";
             std::cin >> number;
 
-            if (number < (int)db.maxdb()) {
+            if (!db.containsNumber(number)) {
             
                 std::cout << "A pokemon with this number already exists." << std::endl;
             

@@ -31,14 +31,22 @@ void PokeDB::listall() const {
     }
 }
 
-Pokemon PokeDB::searchByName(const std::string& target) const {
+const Pokemon& PokeDB::searchByName(const std::string& target) const {
     for (size_t i = 0; i < pokedb.size(); i++) {
         if (pokedb[i].getname() == target) {
-            std::cout << "Pokemon found! Here is his info:\n";
             return pokedb[i];
         }
     }
     throw std::invalid_argument("Pokemon not found");
+}
+
+bool PokeDB::containsNumber(int pokedexNumber) const {
+    for (int i(0); i < (int)pokedb.size(); i++) {
+        if (pokedb[i].getnumber() == pokedexNumber) {
+            return true;
+        }
+    }
+    return false;
 }
 
 int PokeDB::maxdb() {

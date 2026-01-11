@@ -6,7 +6,7 @@ class PokeApp {
     private:
         PokeDB db;
     public: 
-        PokeApp(PokeDB database);
+        PokeApp(PokeDB& database);
         void run();
         void mainMenu();
 };  
