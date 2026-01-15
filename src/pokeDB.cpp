@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 
-PokeDB::PokeDB(char* filename) {
+PokeDB::PokeDB(std::string filename) {
     csv::CSVFormat format;
     format.delimiter(';')
           .no_header();
@@ -49,6 +49,6 @@ bool PokeDB::containsNumber(int pokedexNumber) const {
     return false;
 }
 
-int PokeDB::maxdb() {
+int PokeDB::sizedb() {
     return (int)pokedb.size();
 }

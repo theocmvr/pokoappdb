@@ -9,12 +9,12 @@ class PokeDB {
     private:
         std::vector<Pokemon> pokedb;
     public:
-        PokeDB(char* filename);
+        PokeDB(std::string filename);
         void add(const Pokemon& newPokemon);
         void listall() const;
         const Pokemon& searchByName(const std::string& target) const;
         bool containsNumber(int pokedexNumber) const;
-        int maxdb();
+        int sizedb();
 };
 
 #endif

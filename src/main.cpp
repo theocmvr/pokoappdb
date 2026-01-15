@@ -12,7 +12,8 @@ int main(int argc, char* argv[]) {
         std::cerr << "Usage: ./poke_db <csv_file>" << std::endl;
         return 1;
     }
-    PokeDB db(argv[1]);
+    std::string filename = argv[1];
+    PokeDB db(filename);
     PokeApp app(db);
     app.run();
     return 0;
